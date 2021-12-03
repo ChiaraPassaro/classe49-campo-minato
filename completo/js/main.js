@@ -101,7 +101,7 @@ function generatePlayground(cellsNumber, cellsPerSide, BOMBS_NUMBER, bombs) {
       const bombsDom = document.querySelectorAll('.bomb');
       // const bombsDom = document.querySelector('.bomb');
 
-      if (isSelected == false && bombsDom.length == 0) { //se il mio elemento non ha come classe selected
+      if (isSelected == false && bombsDom.length == 0 && attempts != maxAttempts) { //se il mio elemento non ha come classe selected
         this.classList.add("selected");
         //controllo se il numero che sta nella cella e contenuto nella mia lista di bombe
         const numSquare = parseInt(this.innerText);
@@ -126,7 +126,7 @@ function generatePlayground(cellsNumber, cellsPerSide, BOMBS_NUMBER, bombs) {
         } else {
           console.log('non bomba');
           attempts += 1;
-          console.log(attempts, maxAttempts);
+          // console.log(attempts, maxAttempts);
 
           if (attempts == maxAttempts) { //se ho raggiunto il numero massimo scrivo messaggio e poi blocco
             console.log('hai vinto');
